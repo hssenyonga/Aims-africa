@@ -1,483 +1,416 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)file:///C:/Users/dell/Downloads/aims-execution-plan_1.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AIMS — School Management System</title>
-<link href="./AIMS — School Management System_files/css2" rel="stylesheet">
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AIMS Africa - School Management System</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #0d1f3c;
-    --navy-mid: #1a3258;
-    --gold: #c9962a;
-    --gold-light: #f0c050;
-    --cream: #fdf8f0;
-    --white: #ffffff;
-    --muted: #6b7a92;
-    --card-bg: #ffffff;
-    --border: rgba(201,150,42,0.18);
-    --shadow: 0 8px 40px rgba(13,31,60,0.10);
-  }
+:root {
+  --navy: #0d1f3c;
+  --navy-mid: #1a3258;
+  --gold: #c9962a;
+  --gold-light: #f0c050;
+  --cream: #fdf8f0;
+  --white: #ffffff;
+  --muted: #6b7a92;
+  --shadow: 0 8px 40px rgba(13,31,60,0.10);
+  --border: rgba(201,150,42,0.18);
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--navy); }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* HERO */
+.hero {
+  background:var(--navy);
+  position:relative;
+  overflow:hidden;
+  padding:70px 24px 60px;
+  text-align:center;
+}
+.hero::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 60% 60% at 80% 20%, rgba(201,150,42,0.18), transparent 70%),
+    radial-gradient(ellipse 50% 50% at 10% 80%, rgba(201,150,42,0.10), transparent 60%);
+}
+.hero-badge {
+  display:inline-block;
+  background:rgba(201,150,42,0.15);
+  border:1px solid var(--gold);
+  color:var(--gold-light);
+  padding:6px 18px;
+  border-radius:30px;
+  font-size:11px;
+  letter-spacing:2.5px;
+  margin-bottom:20px;
+  position:relative;
+}
+.hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:3rem;
+  color:white;
+  position:relative;
+}
+.hero h1 span { color:var(--gold-light); }
+.hero-sub {
+  color:rgba(255,255,255,0.6);
+  max-width:600px;
+  margin:15px auto;
+  position:relative;
+}
+.hero-pills {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-top:20px;
+  position:relative;
+}
+.pill {
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.15);
+  color:white;
+  padding:7px 16px;
+  border-radius:20px;
+  font-size:14px;
+}
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--navy);
-    overflow-x: hidden;
-  }
+/* SECTION */
+.section { max-width:950px; margin:auto; padding:60px 20px; }
+.section-title {
+  font-family:'Playfair Display',serif;
+  font-size:2rem;
+  margin-bottom:25px;
+  color:var(--navy);
+}
+.divider {
+  width:50px;
+  height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-light));
+  margin-bottom:10px;
+}
 
-  /* ── HERO ── */
-  .hero {
-    background: var(--navy);
-    position: relative;
-    overflow: hidden;
-    padding: 70px 24px 60px;
-    text-align: center;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 60% at 80% 20%, rgba(201,150,42,0.18) 0%, transparent 70%),
-      radial-gradient(ellipse 50% 50% at 10% 80%, rgba(201,150,42,0.10) 0%, transparent 60%);
-  }
-  .hero-badge {
-    display: inline-block;
-    background: rgba(201,150,42,0.15);
-    border: 1px solid var(--gold);
-    color: var(--gold-light);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    padding: 6px 18px;
-    border-radius: 30px;
-    margin-bottom: 22px;
-    position: relative;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 6vw, 3.8rem);
-    font-weight: 900;
-    color: var(--white);
-    line-height: 1.12;
-    position: relative;
-    max-width: 700px;
-    margin: 0 auto 14px;
-  }
-  .hero h1 span {
-    color: var(--gold-light);
-  }
-  .hero-sub {
-    color: rgba(255,255,255,0.60);
-    font-size: 1rem;
-    font-weight: 300;
-    max-width: 500px;
-    margin: 0 auto 32px;
-    line-height: 1.7;
-    position: relative;
-  }
-  .hero-pills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    position: relative;
-  }
-  .pill {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.15);
-    color: rgba(255,255,255,0.80);
-    font-size: 13px;
-    font-weight: 500;
-    padding: 7px 16px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .pill span { font-size: 15px; }
+/* CARD */
+.card {
+  background:white;
+  padding:24px;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  line-height:1.7;
+}
 
-  /* ── DIVIDER ── */
-  .divider {
-    width: 48px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--gold), var(--gold-light));
-    border-radius: 2px;
-    margin: 0 auto 10px;
-  }
+/* PRICING */
+.pricing {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+.price-card {
+  background:white;
+  padding:28px 24px;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
+.price-card.highlight {
+  background:var(--navy);
+  color:white;
+  border:2px solid var(--gold);
+}
+.price-card h3 {
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;
+  margin-bottom:6px;
+}
+.price-card.highlight h3 { color:var(--gold-light); }
+.price-amount {
+  font-size:1.3rem;
+  font-weight:700;
+  color:var(--gold);
+  margin:8px 0 2px;
+}
+.price-card.highlight .price-amount { color:var(--gold-light); }
+.price-setup {
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:8px;
+}
+.price-card.highlight .price-setup { color:rgba(255,255,255,0.55); }
+.price-cap {
+  display:inline-block;
+  background:rgba(201,150,42,0.12);
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:4px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:600;
+  margin-bottom:16px;
+}
+.price-card.highlight .price-cap {
+  background:rgba(240,192,80,0.15);
+  color:var(--gold-light);
+  border-color:var(--gold-light);
+}
+.feature-list { list-style:none; margin-top:4px; }
+.feature-list li {
+  padding:5px 0;
+  font-size:13.5px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border-bottom:1px solid rgba(0,0,0,0.05);
+}
+.price-card.highlight .feature-list li { border-bottom-color:rgba(255,255,255,0.08); }
+.feature-list li::before {
+  content:'';
+  display:inline-block;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--gold);
+  flex-shrink:0;
+}
+.price-card.highlight .feature-list li::before { background:var(--gold-light); }
 
-  /* ── SECTION ── */
-  .section {
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 60px 24px;
-  }
-  .section-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
-    font-weight: 700;
-    color: var(--navy);
-    line-height: 1.2;
-    margin-bottom: 32px;
-  }
+/* HOW TO WIN */
+.win-grid { display:grid; gap:14px; }
+.win-card {
+  background:white;
+  padding:20px 24px;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  border-left:4px solid var(--gold);
+}
+.win-card h4 { font-size:15px; font-weight:600; margin-bottom:8px; color:var(--navy); }
+.win-card p { font-size:14px; color:var(--muted); line-height:1.6; }
+.win-card a { color:var(--gold); text-decoration:none; }
+.win-card a:hover { text-decoration:underline; }
 
-  /* ── PITCH CARD ── */
-  .pitch-card {
-    background: var(--navy);
-    border-radius: 18px;
-    padding: 40px;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-  }
-  .pitch-card::after {
-    content: '❝';
-    font-size: 160px;
-    position: absolute;
-    right: 20px;
-    top: -30px;
-    color: rgba(201,150,42,0.12);
-    font-family: serif;
-    line-height: 1;
-  }
-  .pitch-card p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.85);
-    margin-bottom: 14px;
-    max-width: 620px;
-    position: relative;
-    z-index: 1;
-  }
-  .pitch-highlight {
-    background: rgba(201,150,42,0.15);
-    border-left: 3px solid var(--gold);
-    padding: 14px 20px;
-    border-radius: 0 10px 10px 0;
-    color: var(--gold-light);
-    font-size: 0.95rem;
-    font-weight: 500;
-    position: relative;
-    z-index: 1;
-    margin-top: 18px;
-  }
+/* GROWTH */
+.growth-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:12px;
+}
+.growth-card {
+  background:white;
+  padding:18px 14px;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  text-align:center;
+  font-size:13.5px;
+  font-weight:500;
+  border-top:3px solid var(--gold);
+}
+.growth-num {
+  display:block;
+  font-size:11px;
+  color:var(--muted);
+  margin-bottom:4px;
+  font-weight:400;
+}
 
-  /* ── PRICING ── */
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-  }
-  .price-card {
-    background: var(--card-bg);
-    border: 1.5px solid var(--border);
-    border-radius: 16px;
-    padding: 32px 26px;
-    box-shadow: var(--shadow);
-    position: relative;
-    transition: transform 0.25s, box-shadow 0.25s;
-  }
-  .price-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(13,31,60,0.14); }
-  .price-card.featured {
-    background: var(--navy);
-    border-color: var(--gold);
-    color: white;
-  }
-  .featured-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, var(--gold), var(--gold-light));
-    color: var(--navy);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 4px 14px;
-    border-radius: 20px;
-  }
-  .price-tier {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 10px;
-  }
-  .price-card.featured .price-tier { color: var(--gold-light); }
-  .price-main {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--navy);
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .price-card.featured .price-main { color: white; }
-  .price-per {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 18px;
-  }
-  .price-card.featured .price-per { color: rgba(255,255,255,0.5); }
-  .price-setup {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--navy);
-    border-top: 1px solid var(--border);
-    padding-top: 14px;
-    margin-bottom: 18px;
-  }
-  .price-card.featured .price-setup { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.12); }
-  .price-features {
-    list-style: none;
-    font-size: 13.5px;
-    line-height: 2;
-    color: var(--muted);
-  }
-  .price-card.featured .price-features { color: rgba(255,255,255,0.65); }
-  .price-features li::before { content: '✓ '; color: var(--gold); font-weight: 700; }
+/* NAVBAR */
+.navbar {
+  background:var(--navy);
+  border-bottom:1px solid rgba(201,150,42,0.25);
+  padding:16px 32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-size:13.5px;
+  flex-wrap:wrap;
+}
+.navbar .brand {
+  color:var(--gold);
+  font-weight:700;
+  letter-spacing:0.5px;
+}
+.navbar .sep {
+  color:rgba(255,255,255,0.3);
+  margin:0 6px;
+}
+.navbar .nav-item {
+  color:rgba(255,255,255,0.75);
+}
 
-  /* ── STRATEGY ── */
-  .strategy-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-  }
-  .step-card {
-    background: var(--card-bg);
-    border: 1.5px solid var(--border);
-    border-radius: 14px;
-    padding: 24px 20px;
-    box-shadow: var(--shadow);
-    transition: transform 0.22s;
-  }
-  .step-card:hover { transform: translateY(-4px); }
-  .step-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: rgba(201,150,42,0.20);
-    line-height: 1;
-    margin-bottom: 10px;
-  }
-  .step-icon { font-size: 1.6rem; margin-bottom: 8px; }
-  .step-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 6px;
-  }
-  .step-desc {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
+/* POPULAR BADGE */
+.popular-badge {
+  display:inline-block;
+  background:var(--gold);
+  color:var(--navy);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  padding:4px 14px;
+  border-radius:20px;
+  margin-bottom:12px;
+}
 
-  /* ── CLOSING ── */
-  .closing-wrap {
-    background: var(--card-bg);
-    border: 1.5px solid var(--border);
-    border-radius: 18px;
-    padding: 40px;
-    box-shadow: var(--shadow);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: center;
-  }
-  @media(max-width:600px){ .closing-wrap { grid-template-columns: 1fr; } }
-  .closing-text p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--muted);
-    margin-bottom: 12px;
-  }
-  .closing-text strong { color: var(--navy); }
-  .closing-visual {
-    background: var(--navy);
-    border-radius: 14px;
-    padding: 28px;
-    text-align: center;
-  }
-  .closing-visual p {
-    color: rgba(255,255,255,0.60);
-    font-size: 13px;
-    margin-bottom: 18px;
-  }
-  .cta-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--navy);
-    font-size: 13px;
-    font-weight: 700;
-    padding: 12px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-  }
+/* Q&A CARDS */
+.qa-list { display:grid; gap:16px; }
+.qa-card {
+  background:white;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.qa-question {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:16px 20px;
+  background:#f7f4ef;
+  font-weight:600;
+  font-size:15px;
+  color:var(--navy);
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+.qa-question::before {
+  content:'';
+  display:inline-block;
+  width:18px;
+  height:18px;
+  min-width:18px;
+  background:repeating-linear-gradient(
+    -45deg,
+    var(--gold) 0px, var(--gold) 3px,
+    rgba(201,150,42,0.25) 3px, rgba(201,150,42,0.25) 6px
+  );
+  border-radius:3px;
+}
+.qa-answer {
+  padding:16px 20px;
+  font-size:14.5px;
+  line-height:1.7;
+  color:#444;
+}
+.qa-answer strong {
+  color:var(--gold);
+  font-weight:600;
+}
 
-  /* ── FORMULA ── */
-  .formula-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 36px 20px;
-    background: var(--navy);
-    border-radius: 18px;
-  }
-  .formula-step {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
-    color: white;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-align: center;
-    transition: background 0.2s;
-  }
-  .formula-step:hover { background: rgba(201,150,42,0.25); border-color: var(--gold); }
-  .formula-arrow {
-    color: var(--gold);
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
-  .formula-note {
-    width: 100%;
-    text-align: center;
-    margin-top: 18px;
-    color: rgba(255,255,255,0.40);
-    font-size: 12px;
-    letter-spacing: 1px;
-  }
-
-  /* ── OBJECTIONS ── */
-  .objection-list { display: flex; flex-direction: column; gap: 14px; }
-  .objection-item {
-    background: var(--card-bg);
-    border: 1.5px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-  }
-  .obj-q {
-    padding: 16px 20px;
-    font-weight: 600;
-    font-size: 14px;
-    color: var(--navy);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .obj-q::before { content: '🚧'; font-size: 16px; }
-  .obj-a {
-    background: #f6f9ff;
-    border-top: 1px solid var(--border);
-    padding: 14px 20px;
-    font-size: 13.5px;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-  .obj-a strong { color: var(--gold); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy);
-    color: rgba(255,255,255,0.40);
-    text-align: center;
-    padding: 28px 20px;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-  }
-  footer strong { color: var(--gold-light); font-weight: 600; }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity:0; transform:translateY(28px); }
-    to   { opacity:1; transform:translateY(0); }
-  }
-  .hero > * { animation: fadeUp 0.7s ease both; }
-  .hero-badge { animation-delay: 0.1s; }
-  .hero h1   { animation-delay: 0.25s; }
-  .hero-sub  { animation-delay: 0.4s; }
-  .hero-pills{ animation-delay: 0.55s; }
+/* OPEN CONVERSATION */
+.convo-box {
+  background:var(--navy);
+  border-radius:16px;
+  padding:36px 32px;
+  position:relative;
+  overflow:hidden;
+  color:white;
+  line-height:1.8;
+  font-size:16px;
+}
+.convo-box::before {
+  content:'\201C\201C';
+  position:absolute;
+  top:16px;
+  right:24px;
+  font-family:'Playfair Display',serif;
+  font-size:80px;
+  color:rgba(255,255,255,0.07);
+  line-height:1;
+}
+.convo-box .hi { color:var(--gold-light); font-weight:700; }
+.convo-key {
+  margin-top:20px;
+  background:rgba(255,255,255,0.07);
+  border-left:3px solid var(--gold);
+  border-radius:6px;
+  padding:12px 16px;
+  font-size:13.5px;
+  color:rgba(255,255,255,0.8);
+}
 </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
+<nav class="navbar">
+  <span class="brand">AIMS School Management System</span>
+  <span class="sep">|</span>
+  <span class="nav-item">Built for African Schools</span>
+  <span class="sep">|</span>
+  <span class="nav-item">Hassan</span>
+  <span class="sep">|</span>
+  <span class="nav-item">Confidential Execution Plan</span>
+</nav>
+
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">Uganda · School Management</div>
+  <div class="hero-badge">Africa · School Management</div>
   <h1>AIMS — The System <span>Built for Your School</span></h1>
-  <p class="hero-sub">Cut fee losses, automate report cards, and manage every department — even without internet.</p>
+  <p class="hero-sub">Cut fee losses, automate report cards, and manage everything — even offline.</p>
   <div class="hero-pills">
-    <div class="pill"><span>📡</span> Works Offline</div>
-    <div class="pill"><span>📊</span> Auto Report Cards</div>
-    <div class="pill"><span>💳</span> Fee Tracking</div>
-    <div class="pill"><span>🇺🇬</span> Built for Uganda</div>
-    <div class="pill"><span>🎓</span> Free Trial Available</div>
+    <div class="pill">📡 Works Offline</div>
+    <div class="pill">📊 Auto Report Cards</div>
+    <div class="pill">💳 Fee Tracking</div>
+    <div class="pill">🎓 Free Trial</div>
   </div>
 </div>
 
-<!-- PITCH -->
+<!-- OPEN THE CONVERSATION RIGHT -->
 <div class="section">
-  <div class="section-label">Sales Pitch</div>
   <div class="divider"></div>
   <div class="section-title">Open the Conversation Right</div>
-  <div class="pitch-card">
-    <p>Good morning. My name is <strong style="color:var(--gold-light)">Hassan</strong>, and I work with <strong style="color:var(--gold-light)">AIMS</strong> — a school management system designed specifically for Ugandan schools.</p>
+  <div class="convo-box">
+    <p>Good morning. My name is <span class="hi">Hassan</span>, and I work with <span class="hi">AIMS</span> — a school management system designed specifically for African schools.</p>
+    <br>
     <p>We help schools reduce fee losses, automate report cards, and manage everything — attendance, exams, staff — all in one place. And it runs even when the internet goes off.</p>
-    <div class="pitch-highlight">
-      💡 Key Value: Works offline, easy for any staff member to use, and built specifically around how Ugandan schools operate.
+    <div class="convo-key">
+      💡 <strong>Key Value:</strong> Works offline, easy for any staff member to use, and built specifically around how African schools operate.
     </div>
   </div>
 </div>
 
 <!-- PRICING -->
-<div class="section" style="padding-top:0">
-  <div class="section-label">Packages</div>
+<div class="section">
   <div class="divider"></div>
-  <div class="section-title">Clear Pricing. No Surprises.</div>
-  <div class="pricing-grid">
+  <div class="section-title">Pricing Plans</div>
+  <div class="pricing">
 
     <div class="price-card">
-      <div class="price-tier">Starter</div>
-      <div class="price-main">50K<span style="font-size:1rem;font-weight:400;color:var(--muted)">/mo</span></div>
-      <div class="price-per">per month after setup</div>
-      <div class="price-setup">UGX 300,000 one-time setup</div>
-      <ul class="price-features">
+      <h3>Starter</h3>
+      <div class="price-amount">UGX 50K / month</div>
+      <div class="price-setup">UGX 300K setup fee</div>
+      <div class="price-cap">Up to 300 students</div>
+      <ul class="feature-list">
         <li>Fee collection tracking</li>
         <li>Student records</li>
         <li>Basic reporting</li>
         <li>Offline mode</li>
+        <li>SMS notifications</li>
+        <li>Multi-branch support</li>
+        <li>High priority support</li>
+        <li>Custom branding</li>
+        <li>Automated report cards</li>
+        <li>Attendance management</li>
+        <li>Exam &amp; grade entry</li>
+        <li>Staff management</li>
       </ul>
     </div>
 
-    <div class="price-card featured">
-      <div class="featured-badge">Most Popular</div>
-      <div class="price-tier">Standard</div>
-      <div class="price-main">120K<span style="font-size:1rem;font-weight:400;color:rgba(255,255,255,0.4)">/mo</span></div>
-      <div class="price-per">per month after setup</div>
-      <div class="price-setup">UGX 600,000 one-time setup</div>
-      <ul class="price-features">
-        <li>Everything in Starter</li>
+    <div class="price-card highlight">
+      <div class="popular-badge">⭐ Most Popular</div>
+      <h3>Standard</h3>
+      <div class="price-amount">UGX 120K / month</div>
+      <div class="price-setup">UGX 600K setup fee</div>
+      <div class="price-cap">Up to 900 students</div>
+      <ul class="feature-list">
+        <li>Fee collection tracking</li>
+        <li>Student records</li>
+        <li>Basic reporting</li>
+        <li>Offline mode</li>
+        <li>SMS notifications</li>
+        <li>Multi-branch support</li>
+        <li>High priority support</li>
+        <li>Custom branding</li>
         <li>Automated report cards</li>
         <li>Attendance management</li>
         <li>Exam &amp; grade entry</li>
@@ -486,126 +419,134 @@
     </div>
 
     <div class="price-card">
-      <div class="price-tier">Premium</div>
-      <div class="price-main">250K<span style="font-size:1rem;font-weight:400;color:var(--muted)">/mo</span></div>
-      <div class="price-per">per month after setup</div>
-      <div class="price-setup">UGX 1,000,000 one-time setup</div>
-      <ul class="price-features">
-        <li>Everything in Standard</li>
+      <h3>Premium</h3>
+      <div class="price-amount">UGX 250K / month</div>
+      <div class="price-setup">UGX 1M setup fee</div>
+      <div class="price-cap">Unlimited students</div>
+      <ul class="feature-list">
+        <li>Fee collection tracking</li>
+        <li>Student records</li>
+        <li>Basic reporting</li>
+        <li>Offline mode</li>
         <li>SMS notifications</li>
         <li>Multi-branch support</li>
-        <li>Priority support</li>
+        <li>High priority support</li>
         <li>Custom branding</li>
+        <li>Automated report cards</li>
+        <li>Attendance management</li>
+        <li>Exam &amp; grade entry</li>
+        <li>Staff management</li>
       </ul>
     </div>
 
   </div>
-  <div style="margin-top:18px; background:rgba(201,150,42,0.08); border:1.5px dashed var(--gold); border-radius:12px; padding:16px 22px; font-size:14px; color:var(--navy); font-weight:500; text-align:center;">
-    🎁 <strong>Free Trial Offer:</strong> Full access for one complete term — before any payment commitment.
-  </div>
 </div>
 
-<!-- STRATEGY -->
-<div class="section" style="padding-top:0">
-  <div class="section-label">Sales Strategy</div>
+<!-- HOW TO WIN -->
+<div class="section">
   <div class="divider"></div>
   <div class="section-title">How to Win the School</div>
-  <div class="strategy-steps">
-    <div class="step-card">
-      <div class="step-num">01</div>
-      <div class="step-icon">🚶</div>
-      <div class="step-title">Physical Visit</div>
-      <div class="step-desc">Show up at the school. Meet the head teacher or bursar directly — in person beats any phone call.</div>
+  <div class="win-grid">
+
+    <div class="win-card">
+      <h4>📧 Email Outreach</h4>
+      <p>
+        Reach out directly to school administrators and heads with a personalised introduction email.<br><br>
+        <strong style="color:var(--navy);">AIMS Africa emails:</strong><br>
+        <a href="mailto:support@aims-africa.com">support@aims-africa.com</a><br>
+        <a href="mailto:sales@aims-africa.com">sales@aims-africa.com</a><br>
+        <a href="mailto:info@aims-africa.com">info@aims-africa.com</a>
+      </p>
     </div>
-    <div class="step-card">
-      <div class="step-num">02</div>
-      <div class="step-icon">💻</div>
-      <div class="step-title">Live Demo</div>
-      <div class="step-desc">Open the system and walk them through it. Show fee tracking, report cards, and the offline mode live.</div>
+
+    <div class="win-card">
+      <h4>💬 WhatsApp Customer Support</h4>
+      <p>
+        For schools that prefer quick, direct communication — our WhatsApp support line is always ready.<br><br>
+        <strong style="color:var(--navy);">AIMS Africa WhatsApp:</strong><br>
+        <a href="https://wa.me/256700000000" target="_blank">+256 700 000 000</a><br>
+        <span style="font-size:13px;">Available Mon–Sat, 8am – 6pm (EAT)</span>
+      </p>
     </div>
-    <div class="step-card">
-      <div class="step-num">03</div>
-      <div class="step-icon">🎁</div>
-      <div class="step-title">Offer the Trial</div>
-      <div class="step-desc">Remove the risk. Offer one full term free so they can see real results before spending anything.</div>
+
+    <div class="win-card">
+      <h4>🚶 Physical Visit</h4>
+      <p>Visit the school in person. Meeting the head teacher or bursar face-to-face builds instant trust and credibility.</p>
     </div>
-    <div class="step-card">
-      <div class="step-num">04</div>
-      <div class="step-icon">📞</div>
-      <div class="step-title">Follow Up in 48hrs</div>
-      <div class="step-desc">Call back within two days. Most deals are lost to silence — don't let them forget you.</div>
+
+    <div class="win-card">
+      <h4>💻 Live Demo</h4>
+      <p>Show the system working in real-time. Walk them through fee collection, report cards, and offline mode on a real device.</p>
     </div>
+
+    <div class="win-card">
+      <h4>🎁 Free Trial</h4>
+      <p>Offer a full term trial at no cost. Let results do the convincing — schools that try AIMS rarely go back.</p>
+    </div>
+
+    <div class="win-card">
+      <h4>📞 Follow Up</h4>
+      <p>Check in after the demo or trial. Most decisions take 1–2 follow-ups. Be persistent but respectful.</p>
+    </div>
+
   </div>
 </div>
 
-<!-- CLOSING STRATEGY -->
-<div class="section" style="padding-top:0">
-  <div class="section-label">Closing Strategy</div>
-  <div class="divider"></div>
-  <div class="section-title">How to Seal the Deal</div>
-  <div class="closing-wrap">
-    <div class="closing-text">
-      <p><strong>Lead with trust, not pressure.</strong> Schools are cautious institutions. They need to feel safe before spending.</p>
-      <p>Use this line: <em style="color:var(--navy); font-style:normal; font-weight:600;">"We don't want you to pay for something you haven't seen working. Test it for one full term — then decide after you've seen the results."</em></p>
-      <p>This removes the biggest objection and makes you the honest option in the room.</p>
-    </div>
-    <div class="closing-visual">
-      <p>Lead with confidence.<br>Close with honesty.</p>
-      <a class="cta-btn" href="file:///C:/Users/dell/Downloads/aims-execution-plan_1.html#">Start the Conversation →</a>
-    </div>
-  </div>
-</div>
-
-<!-- OBJECTION HANDLING -->
-<div class="section" style="padding-top:0">
-  <div class="section-label">Objection Handling</div>
+<!-- READY ANSWERS -->
+<div class="section">
   <div class="divider"></div>
   <div class="section-title">Ready Answers for Tough Questions</div>
-  <div class="objection-list">
-    <div class="objection-item">
-      <div class="obj-q">"We already use spreadsheets and it's working fine."</div>
-      <div class="obj-a"><strong>Response:</strong> Spreadsheets work — until a term-end rush, a lost file, or a fee dispute hits. AIMS keeps everything in one place, with a history that can't be accidentally deleted. And you can keep using what you know while we transition gradually.</div>
+  <div class="qa-list">
+
+    <div class="qa-card">
+      <div class="qa-question">"We already use spreadsheets and it's working fine."</div>
+      <div class="qa-answer"><strong>Response:</strong> Spreadsheets work — until a term-end rush, a lost file, or a fee dispute hits. AIMS keeps everything in one place, with a history that can't be accidentally deleted. And you can keep using what you know while we transition gradually.</div>
     </div>
-    <div class="objection-item">
-      <div class="obj-q">"We can't afford this right now."</div>
-      <div class="obj-a"><strong>Response:</strong> That's exactly why we offer the free trial first. Use it for one term at zero cost, and let the fee recovery alone show you whether it pays for itself. Many schools recover more than the subscription cost in the first month.</div>
+
+    <div class="qa-card">
+      <div class="qa-question">"We can't afford this right now."</div>
+      <div class="qa-answer"><strong>Response:</strong> That's exactly why we offer the free trial first. Use it for one term at zero cost, and let the fee recovery alone show you whether it pays for itself. Many schools recover more than the subscription cost in the first month.</div>
     </div>
-    <div class="objection-item">
-      <div class="obj-q">"Our internet is unreliable — we can't use online systems."</div>
-      <div class="obj-a"><strong>Response:</strong> AIMS was built for that. It runs fully offline and syncs when connection is available. Power or internet issues won't interrupt your operations at all.</div>
+
+    <div class="qa-card">
+      <div class="qa-question">"Our internet is unreliable — we can't use online systems."</div>
+      <div class="qa-answer"><strong>Response:</strong> AIMS was built for that. It runs fully offline and syncs when connection is available. Power or internet issues won't interrupt your operations at all.</div>
     </div>
-    <div class="objection-item">
-      <div class="obj-q">"Our staff aren't tech-savvy."</div>
-      <div class="obj-a"><strong>Response:</strong> We include hands-on training as part of every setup. Most bursars and teachers are comfortable within one day. The interface was designed to be as simple as a mobile phone.</div>
+
+    <div class="qa-card">
+      <div class="qa-question">"Our staff aren't tech-savvy."</div>
+      <div class="qa-answer"><strong>Response:</strong> We include hands-on training as part of every setup. Most bursars and teachers are comfortable within one day. The interface was designed to be as simple as a mobile phone.</div>
     </div>
+
   </div>
 </div>
 
-<!-- FORMULA -->
-<div class="section" style="padding-top:0">
-  <div class="section-label">Growth Engine</div>
+<!-- SEAL THE DEAL -->
+<div class="section">
+  <div class="divider"></div>
+  <div class="section-title">How to Seal the Deal</div>
+  <div class="card">
+    <p>Lead with trust, not pressure. Schools need confidence before spending.</p>
+    <br>
+    <p><strong>"We don't want you to pay for something you haven't seen working. Test it for one full term — then decide after results."</strong></p>
+  </div>
+</div>
+
+<!-- GROWTH / SUCCESS FORMULA -->
+<div class="section">
   <div class="divider"></div>
   <div class="section-title">The AIMS Success Formula</div>
-  <div class="formula-row">
-    <div class="formula-step">🎯 Demo</div>
-    <div class="formula-arrow">→</div>
-    <div class="formula-step">🤝 Close</div>
-    <div class="formula-arrow">→</div>
-    <div class="formula-step">🛠 Support</div>
-    <div class="formula-arrow">→</div>
-    <div class="formula-step">🔄 Retain</div>
-    <div class="formula-arrow">→</div>
-    <div class="formula-step">📣 Referral</div>
-    <div class="formula-arrow">→</div>
-    <div class="formula-step">🚀 Scale</div>
-    <div class="formula-note">Every happy school becomes your next sales agent.</div>
+  <div class="growth-grid">
+    <div class="growth-card"><span class="growth-num">Step 1</span>📧 Email</div>
+    <div class="growth-card"><span class="growth-num">Step 2</span>📞 Contact Schools</div>
+    <div class="growth-card"><span class="growth-num">Step 3</span>💻 Demo</div>
+    <div class="growth-card"><span class="growth-num">Step 4</span>🤝 Close</div>
+    <div class="growth-card"><span class="growth-num">Step 5</span>🛠 Support</div>
+    <div class="growth-card"><span class="growth-num">Step 6</span>🔄 Retain</div>
+    <div class="growth-card"><span class="growth-num">Step 7</span>📣 Referral</div>
+    <div class="growth-card"><span class="growth-num">Step 8</span>🚀 Scale</div>
   </div>
 </div>
 
-<footer>
-  <strong>AIMS School Management System</strong> &nbsp;|&nbsp; Built for Ugandan Schools &nbsp;|&nbsp; Hassan &nbsp;|&nbsp; Confidential Execution Plan
-</footer>
-
-
-
-</body></html>
+</body>
+</html>
